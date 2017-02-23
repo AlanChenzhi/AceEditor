@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Editor</title>
+    <style type="text/css" media="screen">
+        body {
+            overflow: hidden;
+            /*background-color:#ccc;*/
+        }
+        #editor {
+            box-shadow: rgba(0, 0, 0, 0.498039) 15px 15px 15px;
+            position: absolute;
+            top: 100px;
+            left: 200px;
+            width: 800px;
+            height:600px;
+        }
+        .author{
+            position: absolute;
+            top: 60px;
+            left: 200px;
+            font-size: 14px;
+        }
+        h3 {
+            position: absolute;
+            left: 200px;
+            font-family: microsoft yahei, Arial;
+        }
+    </style>
+</head>
+<body>
+<h3>ace editor 示例</h3>
+<a class="author">by 陈大饼</a>
+<pre id="editor">
+//示例代码
+function foo(items) {
+    var i;
+    for (i = 0; i &lt; items.length; i++) {
+        alert("Ace Rocks " + items[i]);
+    }
+}
+//部分常用的API方法
+//设置主题
+editor.setTheme("ace/theme/xcode");
+//设置语言模式
+editor.session.setMode("ace/mode/javascript");
+//设置编辑器字体大小
+document.getElementById('editor').style.fontSize='16px';
+</pre>
+
+<script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js" type="text/javascript" charset="utf-8"></script> -->
+<script>
+    var editor = ace.edit("editor");
+    //设置主题
+    editor.setTheme("ace/theme/monokai");
+    //设置语言模式
+    editor.session.setMode("ace/mode/javascript");
+    //设置编辑器字体大小
+    document.getElementById('editor').style.fontSize='16px';
+
+    //editor.setShowPrintMargin(true);
+
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+</script>
+
+</body>
+</html>
